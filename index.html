@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>拾光小站 · 记录生活的光</title>
+  <meta name="description" content="一个温暖的个人小站：记录想法、读书笔记、日常点滴与健身记录。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/">
+        <span class="brand-leaf">🌿</span>
+        <span class="brand-name" id="brandName">拾光小站</span>
+      </a>
+      <nav class="nav">
+        <a href="#/" data-nav="home">首页</a>
+        <a href="#/about" data-nav="about">关于</a>
+        <button class="btn btn-primary" id="navWrite">✏️ 写文章</button>
+        <button class="btn btn-ghost" id="navAuth">登录</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main" id="app"><!-- 由 app.js 渲染 --></main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>🌱 <span id="footerName">拾光小站</span> · 认真生活，慢慢记录</p>
+      <p class="footer-sub">Powered by Supabase · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <!-- 登录 / 注册弹窗 -->
+  <div class="modal" id="authModal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" id="authClose" aria-label="关闭">×</button>
+      <h2 id="authTitle">登录</h2>
+      <p class="muted" id="authSub">登录后即可发布和管理文章</p>
+      <form id="authForm">
+        <label>邮箱<input type="email" id="authEmail" required placeholder="you@example.com" /></label>
+        <label>密码<input type="password" id="authPassword" required placeholder="至少 6 位" minlength="6" /></label>
+        <button type="submit" class="btn btn-primary btn-block" id="authSubmit">登录</button>
+      </form>
+      <p class="muted center"><a href="#" id="authToggle">第一次来？注册账号</a></p>
+      <p class="auth-msg" id="authMsg"></p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
